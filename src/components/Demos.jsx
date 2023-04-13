@@ -2,8 +2,6 @@ import {React, useState, useEffect } from "react";
 import playCards from "../db/cards.json";
 import "./styles.css";
 
-const CARD_PAIRS = playCards.length;
-
 function shuffle(array) {
   for (let i = array.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
