@@ -1,0 +1,25 @@
+.game-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem;
+}
+
+.card {
+    img {
+        width: 10rem;
+        height: 10rem;
+    }
+    width: 10rem;
+    height: 10rem;
+    margin: 1rem;
+    background-size: cover;
+}
+
+.flipped {
+
+}
+
+.solved {
+}
