@@ -40,7 +40,7 @@ function Demos() {
           newCards[card2.index].isFlipped = false;
           setCards(newCards);
           setFlippedCards([]);
-        }, 1000);
+        }, 2000);
       }
     }
   }, [flippedCards]);
