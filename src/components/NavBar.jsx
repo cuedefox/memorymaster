@@ -6,7 +6,7 @@ import noSoundIcon from "../assets/img/noSoundIcon.svg";
 import song from "../assets/audio/TombstoneCatsShortVersion.mp3";
 
 const NavBar = () => {
-    const [music, setMusic] = useState(true);
+    const [music, setMusic] = useState(false);
 
     const turnMusic = () => {
         setMusic(!music);
