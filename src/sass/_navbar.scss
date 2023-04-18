@@ -1,0 +1,39 @@
+nav {
+    background-color: $color4;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @include size(100%, 3rem);
+    a {
+        text-decoration: none;
+    }
+    div {
+        margin-left: 1rem;
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        justify-content: center;
+        p {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: white;
+            margin-left: .5rem;
+        }
+        img {
+            @include size(2rem, 2rem);
+            margin-right: .5rem;
+        }
+    }
+    button {
+        margin-right: 3rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: none;
+        border: none;
+        cursor: pointer;
+        img {
+            @include size(2rem, 2rem);
+        }
+    }
+}

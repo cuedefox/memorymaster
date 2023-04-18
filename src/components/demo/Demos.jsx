@@ -1,6 +1,6 @@
 import {React, useState, useEffect } from "react";
-import back from "../assets/img/cards/card.png";
-import "../sass/demos.scss";
+import back from "../../assets/img/cards/card.png";
+import "./demos.scss";
 
 const CARD_VALUES = ["A", "B", "C", "D", "E", "F", "G"];
 
@@ -17,7 +17,7 @@ function Demos() {
   const [flippedCards, setFlippedCards] = useState([]);
   const [solvedCards, setSolvedCards] = useState([]);
 
-  const cargarImagen = require.context("../assets/img/cards", true);
+  const cargarImagen = require.context("../../assets/img/cards", true);
 
   useEffect(() => {
     const initialCards = shuffle([

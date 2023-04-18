@@ -1,0 +1,30 @@
+.home-container {
+    min-height: calc(100vh - 6rem);
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    background-image: url("../assets/img/background.png");
+    background-repeat: repeat;
+    background-size: contain;
+    h1 {
+        font-size: 4rem;
+        font-weight: bold;
+        color: $color4;
+        margin: 2rem;
+    }
+    button {
+        cursor: pointer;
+        font-size: 2rem;
+        font-weight: bold;
+        color: white;
+        padding: 1rem;
+        border: none;
+        border-radius: 1rem;
+        background-color: $color1;
+        transition: .3s ease-in-out;
+        &:hover {
+            background-color: $color4;
+        }
+    }
+}

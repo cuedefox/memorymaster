@@ -1,0 +1,24 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: delius;
+}
+
+body {
+    min-height: 100vh;
+  }
+
+@font-face {
+    font-family: delius;
+    src: url("../assets/fonts/delius.ttf");
+}
+
+$color1: #F8EA8C;
+$color2: #A4E8E0;
+$color3: #4CD7D0;
+$color4: #E1C340;
+
+@mixin size($a, $b) {
+    width: $a;
+    height: $b;
+}

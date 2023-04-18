@@ -1,0 +1,15 @@
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $color4;
+    @include size(100%, 3rem);
+    p {
+        margin: 0rem 1rem;
+        font-weight: bold;
+        color: white;
+        a {
+            color: white; 
+        }
+    }
+}
