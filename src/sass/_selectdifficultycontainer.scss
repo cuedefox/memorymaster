@@ -1,10 +1,30 @@
 .select-difficulty {
-    min-height: calc(100vh - 6rem);
-    display: flex;
+    @extend .main-base;
     flex-flow: column nowrap;
-    align-items: center;
-    justify-content: center;
-    background-image: url("../assets/img/background.png");
-    background-repeat: repeat;
-    background-size: contain;
+    position: relative;
+    button {
+        cursor: pointer;
+        border: none;
+        border-radius: 1rem;
+        padding: 1rem;
+        margin: 1rem;
+        align-items: center;
+        justify-content: center;
+        color: #000000;
+        font-weight: bold;
+        font-size: 1.4rem;
+        @include size(8rem, 4rem);
+    }
+}
+
+.easy-button {
+    background-color: greenyellow;
+}
+
+.normal-button {
+    background-color: yellow;
+}
+
+.hard-button {
+    background-color: red;
 }

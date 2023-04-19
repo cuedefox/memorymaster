@@ -1,0 +1,30 @@
+.game {
+    @extend .main-base;
+    flex-flow: column nowrap;
+    position: relative;
+}
+
+.game-container {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem 10rem;
+}
+
+.card {
+    img {
+        @include size(7rem, 7rem);
+    }
+    @include size(7rem, 7rem);
+    margin: .4rem;
+    background-size: cover;
+}
+
+.time-left {
+    color: $color4;
+    font-size: 2rem;
+    text-shadow: #000 1px 0 20px;
+    font-weight: bold;
+    margin: 1rem;
+}

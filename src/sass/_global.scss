@@ -22,3 +22,30 @@ $color4: #E1C340;
     width: $a;
     height: $b;
 }
+
+.main-base {
+    min-height: calc(100vh - 6rem);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url("../assets/img/background.png");
+    background-repeat: repeat;
+    background-size: contain;
+}
+
+.back-home {
+    cursor: pointer;
+    border: none;
+    border-radius: 1rem;
+    padding: 1rem;
+    margin: 1rem;
+    align-items: center;
+    justify-content: center;
+    color: #000000;
+    font-weight: bold;
+    font-size: 1rem !important;
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    width: 7rem !important;
+}
