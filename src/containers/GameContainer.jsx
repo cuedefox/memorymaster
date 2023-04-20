@@ -3,8 +3,6 @@ import back from "../assets/img/cards/card.png";
 import { useNavigate, Link } from "react-router-dom";
 import { Difficulty } from "../context/Difficulty";
 
-const CARD_VALUES = ["A", "B", "C", "D", "E", "F", "G"];
-
 function shuffle(array) {
   for (let i = array.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
@@ -17,40 +15,41 @@ const GameContainer = () => {
     const [cards, setCards] = useState([]);
     const [flippedCards, setFlippedCards] = useState([]);
     const [solvedCards, setSolvedCards] = useState([]);
-    const {difficulty} = useContext(Difficulty);
+    const {difficulty, cardValues, setWin} = useContext(Difficulty);
     const [timeLeft, setTimeLeft] = useState(() => {
-        switch (difficulty) {
-            case 1:
-                return 90;
-            case 2:
-                return 60;
-            case 3:
-                return 45;
-            default: 
-                return 90;
-        }
+      switch (difficulty) {
+        case 1:
+          return 90;
+        case 2:
+          return 60;
+        case 3:
+          return 45;
+        default: 
+          return 90;
+      }
     });
 
     const cargarImagen = require.context("../assets/img/cards", true);
     const navigate = useNavigate();
 
     useEffect(() => {
-        if (timeLeft === 0) {
-            navigate("/gameEnd");
-          } else {
-            const timerId = setTimeout(() => {
-              setTimeLeft(timeLeft - 1);
-            }, 1000);
-            return () => clearTimeout(timerId);
-          }
+      if (timeLeft === 0) {
+        navigate("/gameEnd");
+      } else {
+        const timerId = setTimeout(() => {
+          setTimeLeft(timeLeft - 1);
+        }, 1000);
+        return () => clearTimeout(timerId);
+      }
     }, [timeLeft, navigate]);
   
     useEffect(() => {
       const initialCards = shuffle([
-        ...CARD_VALUES,
-        ...CARD_VALUES
+        ...cardValues,
+        ...cardValues
       ]).map((value) => ({ value, isFlipped: false, isSolved: false }));
       setCards(initialCards);
+      setWin(false);
     }, []);
   
     useEffect(() => {
@@ -70,6 +69,13 @@ const GameContainer = () => {
         }
       }
     }, [flippedCards]);
+
+    useEffect(() => {
+      if (solvedCards.length === (cardValues.length * 2)) {
+        setWin(true);
+        navigate("/gameEnd");
+      }
+    }, [solvedCards, cards, navigate])
   
     const flipCard = (cardIndex) => {
       if (flippedCards.length === 2) {

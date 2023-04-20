@@ -3,13 +3,25 @@ import {Difficulty} from "../context/Difficulty.jsx";
 import { useNavigate, Link } from "react-router-dom";
 
 const SelectDifficultyContainer = () => {
-    const {setDifficulty} = useContext(Difficulty);
+    const {setDifficulty, setCardValues} = useContext(Difficulty);
 
     const navigate = useNavigate();
 
     const handleDifficulty = (difficulty) => {
         setDifficulty(difficulty);
-        console.log(difficulty);
+        switch(difficulty) {
+            case 1:
+                setCardValues(["A", "B", "C", "D", "E", "F", "G", "H"]);
+                break;
+            case 2:
+                setCardValues(["A", "B", "C", "D", "E", "F", "G", "H", "I"]);
+                break;
+            case 3:
+                setCardValues(["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"]);
+                break;
+            default:
+                break;
+        }
         navigate('/game');
     }
 

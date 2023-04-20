@@ -13,12 +13,17 @@
 }
 
 .card {
+    cursor: pointer;
     img {
         @include size(7rem, 7rem);
     }
     @include size(7rem, 7rem);
     margin: .4rem;
     background-size: cover;
+}
+
+.flipped {
+    cursor: auto;
 }
 
 .time-left {
