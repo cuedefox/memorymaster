@@ -12,9 +12,12 @@ const EndGameContainer = () => {
     return <main className="end-game-container">
         {
             win ?
-            <><p className="win">Ganaste</p> 
-            <img src={cargarImagen(`./${randomValue}.png`)} alt="" /></> :
-            <p className="lose">Perdiste</p>
+            <>
+                <p className="win">Victoria</p> 
+                <img src={cargarImagen(`./${randomValue}.png`)} alt="" />
+            </> 
+            :
+            <p className="lose">Derrota</p>
         }
         <Link to={'/'}><button>Volver al menu</button></Link>
     </main>

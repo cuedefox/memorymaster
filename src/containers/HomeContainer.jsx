@@ -1,9 +1,10 @@
 import React from "react";
+import title from "../assets/img/title.svg";
 import { Link } from "react-router-dom";
 
 const HomeContainer = () => {
     return <main className="home-container">
-        <h1>Meow Match</h1>
+        <img src={title} alt="meow match titulo" />
         <Link to={'/difficulty'}>
             <button>Jugar</button>
         </Link> 

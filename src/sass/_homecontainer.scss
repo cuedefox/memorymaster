@@ -1,11 +1,8 @@
 .home-container {
     @extend .main-base;
     flex-flow: column nowrap;
-    h1 {
-        font-size: 4rem;
-        font-weight: bold;
-        color: $color4;
-        margin: 2rem;
+    img {
+        width: 35rem;
     }
     button {
         cursor: pointer;
@@ -19,6 +16,18 @@
         transition: .3s ease-in-out;
         &:hover {
             background-color: $color4;
+        }
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .home-container {
+        img {
+            width: 80vw;
+            margin-bottom: 1rem;
+        }
+        button {
+            transform: scale(80%);
         }
     }
 }

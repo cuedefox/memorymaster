@@ -16,14 +16,19 @@
     cursor: pointer;
     img {
         @include size(7rem, 7rem);
+        transform: rotateY(180deg);
     }
     @include size(7rem, 7rem);
     margin: .4rem;
     background-size: cover;
+    transform-style: preserve-3d;
+    transition: transform 0.5s ease;
+    perspective: 1000px;
 }
 
 .flipped {
     cursor: auto;
+    transform: rotateY(180deg);
 }
 
 .time-left {
@@ -32,4 +37,37 @@
     text-shadow: #000 1px 0 20px;
     font-weight: bold;
     margin: 1rem;
+}
+
+@media screen and (max-width: 1080px) {
+    .game-container {
+        margin: 1rem 4rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .game {
+        button {
+            display: none;
+        }
+    }
+    .card {
+        margin: 1px;
+        img {
+            @include size(6rem, 6rem);
+        }
+        @include size(6rem, 6rem);
+    }
+    .game-container {
+        margin: 1rem 3rem;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .card {
+        img {
+            @include size(5rem, 5rem);
+        }
+        @include size(5rem, 5rem);
+    }
 }

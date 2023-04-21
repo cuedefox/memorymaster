@@ -27,9 +27,9 @@ const SelectDifficultyContainer = () => {
 
     return <main className="select-difficulty">
         <Link to={'/'}><button className="back-home">{'< Regresar'}</button></Link>
-        <button className="easy-button" onClick={() => handleDifficulty(1)} >Facil</button>
+        <button className="easy-button" onClick={() => handleDifficulty(1)} >Fácil</button>
         <button className="normal-button" onClick={() => handleDifficulty(2)} >Normal</button>
-        <button className="hard-button" onClick={() => handleDifficulty(3)} >Dificil</button>
+        <button className="hard-button" onClick={() => handleDifficulty(3)} >Difícil</button>
     </main>
 }
 
