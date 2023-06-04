@@ -1,4 +1,3 @@
-import React from "react";
 import title from "../assets/img/title.svg";
 import { Link } from "react-router-dom";
 

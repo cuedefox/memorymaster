@@ -1,4 +1,4 @@
-import {React, useState} from "react";
+import { useState } from "react";
 import {Link} from "react-router-dom";
 import icon from "../assets/img/icon.svg";
 import soundIcon from "../assets/img/soundIcon.svg";
@@ -6,9 +6,9 @@ import noSoundIcon from "../assets/img/noSoundIcon.svg";
 import song from "../assets/audio/TombstoneCatsShortVersion.mp3";
 
 const NavBar = () => {
-    const [music, setMusic] = useState(false);
+    const [music, setMusic] = useState<boolean>(false);
 
-    const turnMusic = () => {
+    const turnMusic = (): void => {
         setMusic(!music);
     }
 

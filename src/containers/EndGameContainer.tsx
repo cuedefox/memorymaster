@@ -1,12 +1,23 @@
-import {React, useContext } from "react";
+import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { Difficulty } from "../context/Difficulty";
 
+declare const require: {
+    context(
+      directory: string,
+      useSubdirectories?: boolean,
+      regExp?: RegExp
+    ): {
+      keys(): string[];
+      <T>(id: string): T;
+    };
+};
+
 const EndGameContainer = () => {
     const {win} = useContext(Difficulty);
-    const imgs = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"];
-    const randomIndex = Math.floor(Math.random() * imgs.length);
-    const randomValue = imgs[randomIndex];
+    const imgs: string[] = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"];
+    const randomIndex: number = Math.floor(Math.random() * imgs.length);
+    const randomValue: string = imgs[randomIndex];
     const cargarImagen = require.context("../assets/img/cards", true);
 
     return <main className="end-game-container">

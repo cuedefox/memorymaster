@@ -1,6 +1,6 @@
 import "./sass/import.scss";
-import Router from "./router/Router.jsx";
-import DifficultyProvider from "./context/Difficulty.jsx";
+import Router from "./router/Router";
+import DifficultyProvider from "./context/Difficulty";
 
 function App() {
   return <>

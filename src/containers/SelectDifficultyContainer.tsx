@@ -1,5 +1,5 @@
-import React, { useContext } from "react";
-import {Difficulty} from "../context/Difficulty.jsx";
+import { useContext } from "react";
+import {Difficulty} from "../context/Difficulty";
 import { useNavigate, Link } from "react-router-dom";
 
 const SelectDifficultyContainer = () => {
@@ -7,7 +7,7 @@ const SelectDifficultyContainer = () => {
 
     const navigate = useNavigate();
 
-    const handleDifficulty = (difficulty) => {
+    const handleDifficulty = (difficulty: number): void => {
         setDifficulty(difficulty);
         switch(difficulty) {
             case 1:

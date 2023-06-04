@@ -1,6 +1,8 @@
-# Meow Match
+# Meow Match Typescript
 
 Meow Match es un juego de memoria para todos los amantes de los gatos. El objetivo es encontrar todas las parejas de cartas iguales en el menor tiempo posible.
+
+En esta ocasión, quise reformular el código para adaptarlo a tsx como proyecto final en mis estudios de Typescript.
 
 ## Requisitos
 
@@ -30,6 +32,7 @@ Meow Match está construido con las siguientes tecnologías:
 -   React Router DOM: biblioteca para manejar la navegación en aplicaciones web de React.
 -   CSS3: lenguaje de hojas de estilo para dar estilo a las páginas web.
 -   HTML5: lenguaje de marcado para estructurar el contenido de las páginas web.
+-   TypeScript: un superset de JavaScript que agrega tipos estáticos al lenguaje.
 
 
 ## Créditos

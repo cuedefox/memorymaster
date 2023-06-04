@@ -1,10 +1,9 @@
-import React from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Root from "./Root.jsx";
-import HomeContainer from "../containers/HomeContainer.jsx";
-import SelectDifficultyContainer from "../containers/SelectDifficultyContainer.jsx";
-import GameContainer from "../containers/GameContainer.jsx";
-import EndGameContainer from "../containers/EndGameContainer.jsx";
+import Root from "./Root";
+import HomeContainer from "../containers/HomeContainer";
+import SelectDifficultyContainer from "../containers/SelectDifficultyContainer";
+import GameContainer from "../containers/GameContainer";
+import EndGameContainer from "../containers/EndGameContainer";
 
 const router = createBrowserRouter([
     {

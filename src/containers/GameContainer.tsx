@@ -1,22 +1,40 @@
-import {React, useState, useEffect, useContext } from "react";
+import { useState, useEffect, useContext } from "react";
 import back from "../assets/img/cards/card.png";
 import { useNavigate, Link } from "react-router-dom";
 import { Difficulty } from "../context/Difficulty";
 
-function shuffle(array) {
-  for (let i = array.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
+declare const require: {
+  context(
+    directory: string,
+    useSubdirectories?: boolean,
+    regExp?: RegExp
+  ): {
+    keys(): string[];
+    <T>(id: string): T;
+  };
+};
+
+type Card = {
+  value: string,
+  isFlipped?: boolean,
+  isSolved?: boolean,
+  index?: number
+}
+
+function shuffle(array: string[]): string[] {
+  for (let i: number = array.length - 1; i > 0; i--) {
+    const j: number = Math.floor(Math.random() * (i + 1));
     [array[i], array[j]] = [array[j], array[i]];
   }
   return array;
 }
 
 const GameContainer = () => {
-  const [cards, setCards] = useState([]);
-  const [flippedCards, setFlippedCards] = useState([]);
-  const [solvedCards, setSolvedCards] = useState([]);
+  const [cards, setCards] = useState<Card[]>([]);
+  const [flippedCards, setFlippedCards] = useState<Card[]>([]);
+  const [solvedCards, setSolvedCards] = useState<Card[]>([]);
   const {difficulty, cardValues, setWin} = useContext(Difficulty);
-  const [timeLeft, setTimeLeft] = useState(() => {
+  const [timeLeft, setTimeLeft] = useState<number>(() => {
     switch (difficulty) {
       case 1:
         return 90;
@@ -44,7 +62,7 @@ const GameContainer = () => {
   }, [timeLeft, navigate]);
   
   useEffect(() => {
-    const initialCards = shuffle([
+    const initialCards: Card[] = shuffle([
       ...cardValues,
       ...cardValues
     ]).map((value) => ({ value, isFlipped: false, isSolved: false }));
@@ -54,15 +72,19 @@ const GameContainer = () => {
   
   useEffect(() => {
     if (flippedCards.length === 2) {
-      const [card1, card2] = flippedCards.map(({ card, index }) => ({ value: card.value, index }));
+      const [card1, card2]: Card[] = flippedCards.map(({ value, index }) => ({ value: value, index }));
       if (card1.value === card2.value) {
         setSolvedCards([...solvedCards, card1, card2]);
         setFlippedCards([]);
       } else {
         setTimeout(() => {
-          const newCards = [...cards];
-          newCards[card1.index].isFlipped = false;
-          newCards[card2.index].isFlipped = false;
+          const newCards: Card[] = [...cards];
+          if (card1.index !== undefined) {
+            newCards[card1.index].isFlipped = false;
+          }
+          if (card2.index !== undefined) {
+            newCards[card2.index].isFlipped = false;
+          }
           setCards(newCards);
           setFlippedCards([]);
         }, 2000);
@@ -77,18 +99,19 @@ const GameContainer = () => {
     }
   }, [cardValues.length, setWin, navigate, solvedCards.length])
   
-  const flipCard = (cardIndex) => {
+  const flipCard = (cardIndex: number): void => {
     if (flippedCards.length === 2) {
       return;
     }
-    const card = cards[cardIndex];
+    const card: Card = cards[cardIndex];
+    card.index = cardIndex;
     if (card.isFlipped || card.isSolved) {
       return;
     }
-    const newCards = [...cards];
+    const newCards: Card[] = [...cards];
     newCards[cardIndex] = { ...card, isFlipped: true };
     setCards(newCards);
-    setFlippedCards([...flippedCards, { card, index: cardIndex }]);
+    setFlippedCards([...flippedCards, card]);
   };
   
   return <main className="game">
