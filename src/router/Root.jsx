@@ -6,9 +6,9 @@ import Footer from '../components/Footer.jsx';
 const Root = () => {
   return (
     <>
-        <NavBar />
+      <NavBar />
         <Outlet />
-        <Footer />
+      <Footer />
     </>
   )
 }
