@@ -1,4 +1,4 @@
-# Meow Match Typescript
+# Meow Match
 
 Meow Match es un juego de memoria para todos los amantes de los gatos. El objetivo es encontrar todas las parejas de cartas iguales en el menor tiempo posible.
 
